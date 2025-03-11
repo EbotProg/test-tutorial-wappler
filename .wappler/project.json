@@ -1,0 +1,54 @@
+{
+  "projectName": "wCart3",
+  "styleFile": "/css/style.css",
+  "assetsFolder": "/assets",
+  "designFramework": "bootstrap5",
+  "frameworks": [
+    {
+      "name": "fontawesome_5",
+      "type": "cdn"
+    },
+    {
+      "name": "bootstrap5",
+      "type": "local"
+    },
+    {
+      "name": "appConnect",
+      "type": "local"
+    }
+  ],
+  "hostingType": "docker",
+  "projectServerModel": "PHP",
+  "runtime": "capacitor",
+  "webRootFolder": "/www",
+  "targets": [
+    {
+      "name": "Development",
+      "remoteURL": "http://localhost:8100",
+      "webServerPort": 8100,
+      "webServerLang": "PHP",
+      "targetType": "docker",
+      "webServer": "apache",
+      "PHPVersion": "8.2.x",
+      "webLoggingMaxFiles": "5",
+      "webLoggingMaxFileSize": "10m",
+      "databaseLoggingMaxFiles": "5",
+      "databaseLoggingMaxFileSize": "10m",
+      "databaseType": "mysql",
+      "mySQLVersion": "8.0.x",
+      "noSampleData": true,
+      "databasePort": 9906,
+      "mySQL_rootPassword": "zeKL8Krv",
+      "mySQL_databaseName": "wcart3",
+      "mySQL_username": "db_user",
+      "mySQL_password": "iawsvVSs"
+    }
+  ],
+  "activeTarget": "Development",
+  "useRouting": true,
+  "addBase": true,
+  "routingHandler": "apache",
+  "projectType": "web",
+  "extensions": [],
+  "useComposer": true
+}

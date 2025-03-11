@@ -1,0 +1,982 @@
+{
+  "direct": true,
+  "type": "mysql2",
+  "connection": {
+    "host": "127.0.0.1",
+    "port": 9906,
+    "user": "db_user",
+    "password": "iawsvVSs",
+    "database": "wcart3"
+  },
+  "schema": {
+    "tables": {
+      "company": {
+        "db": {},
+        "columns": {
+          "CompanyID": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "nullable": false
+            }
+          },
+          "CompanyName": {
+            "db": {
+              "type": "string",
+              "maxLength": 100,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CompanyAddress": {
+            "db": {
+              "type": "string",
+              "maxLength": 100,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CompanyCity": {
+            "db": {
+              "type": "string",
+              "maxLength": 90,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CompanyState": {
+            "db": {
+              "type": "string",
+              "maxLength": 20,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CompanyZip": {
+            "db": {
+              "type": "string",
+              "maxLength": 12,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CompanyCountry": {
+            "db": {
+              "type": "string",
+              "maxLength": 20,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CompanyEmail": {
+            "db": {
+              "type": "string",
+              "maxLength": 500,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CompanyPhone": {
+            "db": {
+              "type": "string",
+              "maxLength": 20,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CompanyWebsite": {
+            "db": {
+              "type": "string",
+              "maxLength": 100,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CompanyLogo": {
+            "db": {
+              "type": "string",
+              "maxLength": 100,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CompanyRegistrationDate": {
+            "db": {
+              "type": "date",
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CompanyBusinessID": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "nullable": true
+            }
+          }
+        }
+      },
+      "countries": {
+        "db": {}
+      },
+      "customers": {
+        "db": {},
+        "columns": {
+          "CustomerID": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "nullable": false
+            }
+          },
+          "CustomerEmail": {
+            "db": {
+              "type": "string",
+              "maxLength": 60,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CustomerPassword": {
+            "db": {
+              "type": "string",
+              "maxLength": 64,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CustomerFirstName": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CustomerLastName": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CustomerAddress": {
+            "db": {
+              "type": "string",
+              "maxLength": 60,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CustomerCity": {
+            "db": {
+              "type": "string",
+              "maxLength": 30,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CustomerState": {
+            "db": {
+              "type": "string",
+              "maxLength": 20,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CustomerZip": {
+            "db": {
+              "type": "string",
+              "maxLength": 12,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CustomerCountry": {
+            "db": {
+              "type": "string",
+              "maxLength": 20,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CustomerPhone": {
+            "db": {
+              "type": "string",
+              "maxLength": 20,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CustomerEmailVerified": {
+            "db": {
+              "type": "boolean",
+              "default": "'0'",
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CustomerRegistrationDate": {
+            "db": {
+              "type": "timestamp",
+              "default": "knex.fn.now()",
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CustomerVerificationCode": {
+            "db": {
+              "type": "string",
+              "maxLength": 20,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "CustomerIP": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "nullable": true
+            }
+          }
+        }
+      },
+      "meta": {
+        "db": {}
+      },
+      "orderdetails": {
+        "db": {},
+        "columns": {
+          "DetailID": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "nullable": false
+            }
+          },
+          "DetailOrderID": {
+            "db": {
+              "type": "integer",
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "DetailProductID": {
+            "db": {
+              "type": "integer",
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "DetailName": {
+            "db": {
+              "type": "string",
+              "maxLength": 250,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "DetailPrice": {
+            "db": {
+              "type": "float",
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "DetailSKU": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "DetailQuantity": {
+            "db": {
+              "type": "integer",
+              "primary": false,
+              "nullable": true
+            }
+          }
+        }
+      },
+      "orders": {
+        "db": {},
+        "columns": {
+          "OrderID": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "nullable": false
+            }
+          },
+          "OrderCustomerID": {
+            "db": {
+              "type": "integer",
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "OrderAmount": {
+            "db": {
+              "type": "float",
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "OrderShipName": {
+            "db": {
+              "type": "string",
+              "maxLength": 100,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "OrderShipAddress": {
+            "db": {
+              "type": "string",
+              "maxLength": 100,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "OrderShipAddress2": {
+            "db": {
+              "type": "string",
+              "maxLength": 100,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "OrderCity": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "OrderState": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "OrderZip": {
+            "db": {
+              "type": "string",
+              "maxLength": 20,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "OrderCountry": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "OrderPhone": {
+            "db": {
+              "type": "string",
+              "maxLength": 20,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "OrderPostage": {
+            "db": {
+              "type": "float",
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "OrderTax": {
+            "db": {
+              "type": "float",
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "OrderEmail": {
+            "db": {
+              "type": "string",
+              "maxLength": 100,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "OrderDate": {
+            "db": {
+              "type": "timestamp",
+              "default": "knex.fn.now()",
+              "primary": false,
+              "nullable": false
+            }
+          },
+          "OrderShipped": {
+            "db": {
+              "type": "boolean",
+              "default": "'0'",
+              "primary": false,
+              "nullable": false
+            }
+          },
+          "OrderTrackingNumber": {
+            "db": {
+              "type": "string",
+              "maxLength": 80,
+              "primary": false,
+              "nullable": true
+            }
+          }
+        }
+      },
+      "products": {
+        "db": {},
+        "columns": {
+          "ProductID": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "nullable": false
+            }
+          },
+          "ProductSKU": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "nullable": false
+            }
+          },
+          "ProductName": {
+            "db": {
+              "type": "string",
+              "maxLength": 100,
+              "primary": false,
+              "nullable": false
+            }
+          },
+          "ProductPrice": {
+            "db": {
+              "type": "float",
+              "primary": false,
+              "nullable": false
+            }
+          },
+          "ProductWeight": {
+            "db": {
+              "type": "float",
+              "primary": false,
+              "nullable": false
+            }
+          },
+          "ProductCartDesc": {
+            "db": {
+              "type": "string",
+              "maxLength": 250,
+              "primary": false,
+              "nullable": false
+            }
+          },
+          "ProductShortDesc": {
+            "db": {
+              "type": "string",
+              "maxLength": 1000,
+              "primary": false,
+              "nullable": false
+            }
+          },
+          "ProductLongDesc": {
+            "db": {
+              "type": "text",
+              "maxLength": 65535,
+              "primary": false,
+              "nullable": false
+            }
+          },
+          "ProductThumb": {
+            "db": {
+              "type": "string",
+              "maxLength": 100,
+              "primary": false,
+              "nullable": false
+            }
+          },
+          "ProductImage": {
+            "db": {
+              "type": "string",
+              "maxLength": 100,
+              "primary": false,
+              "nullable": false
+            }
+          },
+          "ProductCategoryID": {
+            "db": {
+              "type": "integer",
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "ProductUpdateDate": {
+            "db": {
+              "type": "timestamp",
+              "default": "knex.fn.now()",
+              "primary": false,
+              "nullable": false
+            }
+          },
+          "ProductStock": {
+            "db": {
+              "type": "float",
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "ProductLive": {
+            "db": {
+              "type": "boolean",
+              "default": "'0'",
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "ProductUnlimited": {
+            "db": {
+              "type": "boolean",
+              "default": "'1'",
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "ProductLocation": {
+            "db": {
+              "type": "string",
+              "maxLength": 250,
+              "primary": false,
+              "nullable": true
+            }
+          }
+        },
+        "db_changes": [
+          {
+            "recid": 1,
+            "ProductImage": "/assets/images/shoes.jpeg",
+            "__newRec": true
+          },
+          {
+            "recid": 2,
+            "ProductImage": "/assets/images/shirt.jpeg",
+            "__newRec": true
+          }
+        ]
+      },
+      "regions": {
+        "db": {}
+      },
+      "users": {
+        "db": {},
+        "columns": {
+          "UserID": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "nullable": false
+            }
+          },
+          "UserName": {
+            "db": {
+              "type": "string",
+              "maxLength": 500,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "UserPassword": {
+            "db": {
+              "type": "string",
+              "maxLength": 500,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "UserLevel": {
+            "db": {
+              "type": "integer",
+              "default": "'2'",
+              "primary": false,
+              "nullable": false
+            }
+          }
+        }
+      }
+    },
+    "views": {},
+    "collations": [
+      {
+        "collation": "utf8mb4_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_0900_as_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_0900_bin",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_bg_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_bg_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_bin",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_bs_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_bs_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_croatian_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_cs_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_cs_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_czech_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_danish_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_da_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_da_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_de_pb_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_de_pb_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_eo_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_eo_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_esperanto_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_estonian_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_es_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_es_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_es_trad_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_es_trad_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_et_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_et_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_general_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_german2_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_gl_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_gl_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_hr_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_hr_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_hungarian_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_hu_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_hu_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_icelandic_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_is_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_is_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_ja_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_ja_0900_as_cs_ks",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_latvian_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_la_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_la_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_lithuanian_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_lt_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_lt_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_lv_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_lv_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_mn_cyrl_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_mn_cyrl_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_nb_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_nb_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_nn_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_nn_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_persian_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_pl_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_pl_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_polish_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_romanian_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_roman_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_ro_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_ro_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_ru_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_ru_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_sinhala_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_sk_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_sk_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_slovak_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_slovenian_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_sl_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_sl_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_spanish2_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_spanish_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_sr_latn_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_sr_latn_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_sv_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_sv_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_swedish_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_tr_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_tr_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_turkish_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_unicode_520_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_unicode_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_vietnamese_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_vi_0900_ai_ci",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_vi_0900_as_cs",
+        "charset": "utf8mb4"
+      },
+      {
+        "collation": "utf8mb4_zh_0900_as_cs",
+        "charset": "utf8mb4"
+      }
+    ]
+  }
+}
